@@ -69,7 +69,7 @@ public class IFTTTWebhookServlet extends HttpServlet {
     }
 
     protected void process(final WordpressPostRequest wpRequest) throws IOException {
-        System.out.println(wpRequest);
+        LOGGER.info(wpRequest.toString());
     }
 
     @Override
@@ -182,7 +182,6 @@ public class IFTTTWebhookServlet extends HttpServlet {
         LOGGER.error(e.getLocalizedMessage(), e);
         response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         response.getWriter().write(FAULT.replace("@faultCode@", "1"));
-        request.getSession().invalidate();
     }
 
     private static class WordpressPostRequest {
