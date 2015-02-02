@@ -2,7 +2,6 @@ package me.enomoto.ifttt_webhook;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Arrays;
 
 import javax.servlet.ServletException;
@@ -198,11 +197,9 @@ public class IFTTTWebhookServlet extends HttpServlet {
 
         public String[] categories = new String[0];
 
-        public URL imageUrl;
-
         @Override
         public String toString() {
-            return "WordpressPostRequest [methodName=" + methodName + ", username=" + username + ", password=" + password + ", title=" + title + ", description=" + description + ", categories=" + Arrays.toString(categories) + ", imageUrl=" + imageUrl + "]";
+            return "WordpressPostRequest [methodName=" + methodName + ", username=" + username + ", password=" + password + ", title=" + title + ", description=" + description + ", categories=" + Arrays.toString(categories) + "]";
         }
     }
 }
